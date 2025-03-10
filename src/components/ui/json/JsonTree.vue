@@ -1,13 +1,23 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, computed } from "vue";
+import { JsonTreeNode } from "./";
 
 const props = defineProps<{ json: string }>();
+
+const parsedJson = computed(() => {
+  try {
+    return JSON.parse(props.json);
+  } catch {
+    return null;
+  }
+});
 </script>
 
 <template>
-  <div class="relative text-white font-mono px-4 pb-4">
-    <div class="relative border rounded h-full bg-gray-900 overflow-y-scroll pl-1">
-      <pre>{{ JSON.parse(json) }}</pre>
+  <div class="relative font-mono px-4 pb-4">
+    <div class="relative border rounded h-full overflow-y-auto p-2">
+      <JsonTreeNode v-if="parsedJson" :node="parsedJson" :json="props.json" />
+      <p v-else class="text-red-500">Invalid JSON</p>
     </div>
   </div>
 </template>

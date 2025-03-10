@@ -38,7 +38,7 @@ const copyToClipboard = async () => {
 </script>
 
 <template>
-  <div class="relative text-white font-mono px-4 pb-4">
+  <div class="relative font-mono px-4 pb-4">
     <div class="relative border rounded h-full bg-gray-900 overflow-y-scroll pl-1">
       <Button
         variant="outline"

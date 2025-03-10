@@ -2,7 +2,7 @@
 import { computed, defineProps, defineEmits } from "vue";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { ClipboardPaste, Eraser, CircleX } from "lucide-vue-next";
+import { ClipboardPaste, Eraser, CircleX, CircleCheck } from "lucide-vue-next";
 
 const props = defineProps<{ json: string; isJsonValid: boolean }>();
 const emit = defineEmits(["update:json"]);
@@ -49,7 +49,11 @@ const clear = () => emit("update:json", "");
       class="absolute bottom-2 left-4 text-red-500 text-sm flex items-center gap-2"
     >
       <CircleX class="h-4 w-4" />
-      Invalid JSON
+      JSON is invalid
+    </p>
+    <p v-else class="absolute bottom-2 left-4 text-green-500 text-sm flex items-center gap-2">
+      <CircleCheck class="h-4 w-4" />
+      JSON is valid
     </p>
   </section>
 </template>
