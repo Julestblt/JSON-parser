@@ -30,8 +30,7 @@ const copyToClipboard = async () => {
   } catch (err) {
     console.error("Failed to copy JSON:", err);
     toast("Copy failed", {
-      description: "An error occurred while copying the JSON.",
-      variant: "destructive"
+      description: "An error occurred while copying the JSON."
     });
   }
 };

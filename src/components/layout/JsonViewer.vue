@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { WandSparkles, ListTree, CircleX } from "lucide-vue-next";
 import { JsonBeautify, JsonTree } from "@/components/ui/json";
 
-const props = defineProps<{ json: string; isJsonValid: boolean }>();
+defineProps<{ json: string; isJsonValid: boolean }>();
 
 const viewMode = ref<"beautify" | "tree">("beautify");
 

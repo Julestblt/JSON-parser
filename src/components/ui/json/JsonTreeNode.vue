@@ -4,7 +4,7 @@ import { ChevronRight, Brackets, Copy } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import { toast } from "vue-sonner";
 
-const props = defineProps<{ node: any; level?: number }>();
+const props = defineProps<{ node: any; level?: number; json: string }>();
 
 const formattedJson = computed(() => {
   try {
@@ -15,7 +15,6 @@ const formattedJson = computed(() => {
 });
 
 const isOpen = ref(false);
-const indentation = `${(props.level ?? 0) * 1.5}rem`;
 
 const isObject = (val: any) => typeof val === "object" && val !== null;
 const isArray = (val: any) => Array.isArray(val);
@@ -31,8 +30,7 @@ const copyToClipboard = async () => {
   } catch (err) {
     console.error("Failed to copy JSON:", err);
     toast("Copy failed", {
-      description: "An error occurred while copying the JSON.",
-      variant: "destructive"
+      description: "An error occurred while copying the JSON."
     });
   }
 };
@@ -70,7 +68,7 @@ const copyToClipboard = async () => {
           </template>
           <template v-else>
             <span class="text-blue-400">"{{ key }}"</span>:
-            <JsonTreeNode :node="value" :level="(level ?? 0) + 1" />
+            <JsonTreeNode :node="value" :level="(level ?? 0) + 1" :json="props.json" />
           </template>
         </div>
       </div>

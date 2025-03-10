@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { Button } from "@/components/ui/button";
 import { GitBranch, Moon, Sun, Braces } from "lucide-vue-next";
 import { useColorMode } from "@vueuse/core";
@@ -8,7 +8,7 @@ defineProps({
   appName: String
 });
 
-const mode = useColorMode({ initialMode: "system" });
+const mode = useColorMode();
 const isDark = computed(() => mode.value === "dark");
 
 const toggleMode = () => {
