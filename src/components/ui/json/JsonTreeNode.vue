@@ -40,7 +40,7 @@ const copyToClipboard = async () => {
   <div class="ml-4">
     <Button
       variant="outline"
-      class="absolute top-2 right-2 p-2 flex items-center gap-2 text-white"
+      class="absolute top-2 right-2 p-2 flex items-center gap-2"
       @click="copyToClipboard"
     >
       <Copy class="w-4 h-4" />

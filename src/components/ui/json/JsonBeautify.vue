@@ -38,10 +38,10 @@ const copyToClipboard = async () => {
 
 <template>
   <div class="relative font-mono px-4 pb-4">
-    <div class="relative border rounded h-full bg-gray-900 overflow-y-scroll pl-1">
+    <div class="relative border rounded h-full overflow-y-scroll pl-1">
       <Button
         variant="outline"
-        class="absolute top-2 right-2 p-2 flex items-center gap-2 text-white"
+        class="absolute top-2 right-2 p-2 flex items-center gap-2"
         @click="copyToClipboard"
       >
         <Copy class="w-4 h-4" />
