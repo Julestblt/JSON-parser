@@ -51,7 +51,10 @@ const clear = () => emit("update:json", "");
       <CircleX class="h-4 w-4" />
       JSON is invalid
     </p>
-    <p v-else class="absolute bottom-2 left-4 text-green-500 text-sm flex items-center gap-2">
+    <p
+      v-else-if="isJsonValid && props.json !== ''"
+      class="absolute bottom-2 left-4 text-green-500 text-sm flex items-center gap-2"
+    >
       <CircleCheck class="h-4 w-4" />
       JSON is valid
     </p>
