@@ -18,7 +18,7 @@ const toggleMode = () => {
 
 <template>
   <header
-    class="bg-card sticky top-0 z-50 flex items-center justify-between border-b px-6 py-4 shadow-md"
+    class="bg-card sticky top-0 z-50 flex items-center justify-between border-b px-6 py-4 shadow-md h-20"
   >
     <div class="my-2 flex items-center space-x-2 hover:text-primary">
       <a href="#" class="flex items-center space-x-2">

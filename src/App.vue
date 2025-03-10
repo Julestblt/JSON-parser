@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import Header from "./components/layout/Header.vue";
+import { Header, Main } from "./components/layout";
+import { Toaster } from "@/components/ui/sonner";
 </script>
 
 <template>
+  <Toaster />
   <Header appName="JSON parser" />
+  <Main />
 </template>
